@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url("https://i.gifer.com/TRkO.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    background-image: url("https://i.gifer.com/TRkO.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 45%;
+    width: 45%;
+    display: grid;
+    grid-template-rows: 35% 65%;
+    align-items: center;
+    justify-content: center;
+    border: .3rem solid rgb(4, 4, 4);
+    border-radius: 5rem;
+    
+}
+h1{
+    margin-top: 3rem;
+    font-size: 3.5rem;
+    text-align: center;
+    padding: 0 1rem;
+    border-bottom: 2px solid rgb(37, 36, 36);
+    background: linear-gradient(90deg, #00dbde,  #fc00ff, #e41852);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.box{
+    height: 100%;
+    width: 110%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.clock{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 .5rem;
+    width: 80%;
+    height: 8rem;
+    align-items: center;
+    color: rgb(188, 247, 255);
+    background: linear-gradient(90deg, #00dbde, #fc00ff);
+    position: relative;
+    border-radius: 1rem;
+    font-size: 4rem;
+    overflow: hidden;
+}
+.clock p{
+    font-size: 1rem;
+}
+.clock::before{
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 90%;
+    height: 8rem;
+    background: linear-gradient(0deg, transparent, transparent, #f5eb23,#f5eb23, #f5eb23);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 5s linear infinite;
+}
+.clock::after{
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 90%;
+    height: 8rem;
+    background: linear-gradient(0deg, transparent, transparent, #e41852,#e41852, #e41852);
+    z-index: 0;
+    transform-origin: bottom right;
+    animation: animate 5s linear infinite;
+    animation-delay: -3s;
+}
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.right{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 10px;
+}
+.per{
+    font-size: 2.2em;
+    font-weight: 500;
+    transform: translateY(-60px);
+    background: linear-gradient(90deg, #00dbde, #fc00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.front-clock{
+    text-align: center;
+    padding-top: .6rem;
+    background-image: url("https://www.icegif.com/wp-content/uploads/2021/12/icegif-1543.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 95%;
+    height: 95%;
+    border-radius: 1rem;
+    z-index: 1;
+}
+@media (max-width: 900px){
+    .container{
+        width: 60%;
+    }
+    .clock{
+        font-size: 3rem;
+    }
+}
+@media (max-width: 590px){
+    .container{
+        grid-template-rows: 20% 80%;
+    }
+    h1{
+        margin-top: 0;
+    }    
+    .box{
+        display: grid;
+        grid-template-rows: 33% 33% 33%;
+    }
+    .clock{
+        width: 30vw;
+        margin: 0;
+        font-size: 4rem;
+        margin-top: .8rem;
+    }
+}
